@@ -1,0 +1,12 @@
+D:\YandexDisk\VisualStudio\VKPost\VKPost\bin\Debug\VKPost.exe
+D:\YandexDisk\VisualStudio\VKPost\VKPost\bin\Debug\VKPost.pdb
+D:\YandexDisk\VisualStudio\VKPost\VKPost\bin\Debug\VKPost.xml
+D:\YandexDisk\VisualStudio\VKPost\VKPost\obj\Debug\VKPost.vbprojResolveAssemblyReference.cache
+D:\YandexDisk\VisualStudio\VKPost\VKPost\obj\Debug\VKPost.Form1.resources
+D:\YandexDisk\VisualStudio\VKPost\VKPost\obj\Debug\VKPost.Resources.resources
+D:\YandexDisk\VisualStudio\VKPost\VKPost\obj\Debug\VKPost.vbproj.GenerateResource.Cache
+D:\YandexDisk\VisualStudio\VKPost\VKPost\obj\Debug\VKPost.exe
+D:\YandexDisk\VisualStudio\VKPost\VKPost\obj\Debug\VKPost.xml
+D:\YandexDisk\VisualStudio\VKPost\VKPost\obj\Debug\VKPost.pdb
+D:\YandexDisk\VisualStudio\VKPost\VKPost\bin\Debug\Newtonsoft.Json.dll
+D:\YandexDisk\VisualStudio\VKPost\VKPost\bin\Debug\Newtonsoft.Json.xml
