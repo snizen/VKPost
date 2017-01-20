@@ -196,8 +196,10 @@ Public Class Form1
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
-            For Each fName As String In Directory.GetFiles(FolderBrowserDialog1.SelectedPath, "*.jpg")
-                ListView1.Items.Add(fName)
+            For Each dName As String In Directory.GetDirectories(FolderBrowserDialog1.SelectedPath)
+                For Each fName As String In Directory.GetFiles(dName, "*.jpg")
+                    ListView1.Items.Add(fName)
+                Next
             Next
         End If
     End Sub
