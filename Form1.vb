@@ -102,7 +102,7 @@ Public Class Form1
         Catch
         End Try
 
-        TextBoxDescription1.Text = Replace(TextBoxDescription1.Text, "#", "%23") ' %23 - номер символа # в unicode
+        TextBoxDescription1.Text = ConvEscape(TextBoxDescription1.Text)
 
         Dim xmlDoc As New XmlDocument
         xmlDoc.Load("https://api.vk.com/method/photos.saveWallPhoto.xml?server=" & TextBox2.Text & "&photo=" & TextBox3.Text & "&caption=" & TextBoxDescription1.Text & "&hash=" & TextBox4.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
@@ -124,7 +124,7 @@ Public Class Form1
             Catch
             End Try
 
-            TextBoxMessage1.Text = Replace(TextBoxMessage1.Text, "#", "%23")
+            TextBoxMessage1.Text = ConvEscape(TextBoxMessage1.Text)
 
             If postToGroupWall = False Then
                 navigateState = 1
@@ -139,6 +139,18 @@ Public Class Form1
             End If
         Next
     End Sub
+
+    Public Function ConvEscape(ByVal str As String) As String
+        Dim utf8 As Encoding = Encoding.GetEncoding("utf-8")
+        Dim win1251 As Encoding = Encoding.GetEncoding("windows-1251")
+        Dim str1 As Byte() = win1251.GetBytes(str)
+        Dim str2 As Byte() = Encoding.Convert(win1251, utf8, str1)
+        Dim Result As String = ""
+        For i = 0 To str2.Count - 1
+            Result = Result & "%" & Hex(str2(i))
+        Next
+        Return Result
+    End Function
 
     Public Function getFromXML(URL As String, selectNode As String, returnValue As String) As String
         Dim xmlDoc As New XmlDocument
@@ -201,6 +213,9 @@ Public Class Form1
                     ListView1.Items.Add(fName)
                 Next
             Next
+            For Each fName As String In Directory.GetFiles(FolderBrowserDialog1.SelectedPath, "*.jpg")
+                ListView1.Items.Add(fName)
+            Next
         End If
     End Sub
 
@@ -238,7 +253,5 @@ Public Class Form1
             ArrayList.RemoveAt(Index)
         End While
     End Sub
-End Class
 
-'escape последовательность слова «привет» в кодировке UTF-8: 
-'%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82
+End Class
