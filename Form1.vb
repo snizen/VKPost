@@ -31,7 +31,12 @@ Public Class Form1
                     TextBox1.Text = element.SelectSingleNode("upload_url").InnerText
                 Next
                 TabControl1.SelectedIndex = 1
+                navigateState = 3
             End If
+        End If
+        If navigateState = 3 Then
+            TextBoxGroupID1.Text = getFromXML("https://api.vk.com/method/groups.get.xml?user_id=" & TextBoxUserID1.Text & "&filter=moder&access_token=" & TextBoxToken1.Text & "&v=5.60", "/response/items", "gid")
+            navigateState = 4
         End If
     End Sub
 
@@ -43,10 +48,14 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        OpenFileDialog1.InitialDirectory = "c:\"
-        OpenFileDialog1.Title = "Открыть изображение"
-        OpenFileDialog1.Filter = "Файл изображения|*.jpg"
-        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then PostToWall(OpenFileDialog1.FileName, True)
+        If TextBoxGroupID1.Text <> "" Then
+            OpenFileDialog1.InitialDirectory = "c:\"
+            OpenFileDialog1.Title = "Открыть изображение"
+            OpenFileDialog1.Filter = "Файл изображения|*.jpg"
+            If OpenFileDialog1.ShowDialog() = DialogResult.OK Then PostToWall(OpenFileDialog1.FileName, True)
+        Else
+            MsgBox("Не заполнен ID группы")
+        End If
     End Sub
 
     Public Sub PostToWall(tFileName As String, postToGroupWall As Boolean)
@@ -102,10 +111,11 @@ Public Class Form1
         Catch
         End Try
 
-        TextBoxDescription1.Text = ConvEscape(TextBoxDescription1.Text)
+
+        Dim tmpDescription As String = ConvEscape(TextBoxDescription1.Text)
 
         Dim xmlDoc As New XmlDocument
-        xmlDoc.Load("https://api.vk.com/method/photos.saveWallPhoto.xml?server=" & TextBox2.Text & "&photo=" & TextBox3.Text & "&caption=" & TextBoxDescription1.Text & "&hash=" & TextBox4.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        xmlDoc.Load("https://api.vk.com/method/photos.saveWallPhoto.xml?server=" & TextBox2.Text & "&photo=" & TextBox3.Text & "&caption=" & tmpDescription & "&hash=" & TextBox4.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
         Dim answers As XmlNodeList = xmlDoc.DocumentElement.SelectNodes("/response/photo")
         For Each element As XmlNode In answers
 
@@ -124,18 +134,22 @@ Public Class Form1
             Catch
             End Try
 
-            TextBoxMessage1.Text = ConvEscape(TextBoxMessage1.Text)
+            Dim tmpMessage As String = ConvEscape(TextBoxMessage1.Text)
 
             If postToGroupWall = False Then
-                navigateState = 1
                 'Публикуем пост с картинкой на страницу пользователя
-                WebBrowser1.Navigate("https://api.vk.com/method/wall.post.xml?owner_id=" & TextBoxUserID1.Text & "&attachments=photo" & element.SelectSingleNode("owner_id").InnerText & "_" & element.SelectSingleNode("id").InnerText & "&message=" & TextBoxMessage1.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+                navigateState = 1
+                WebBrowser1.Navigate("https://api.vk.com/method/wall.post.xml?owner_id=" & TextBoxUserID1.Text & "&attachments=photo" & element.SelectSingleNode("owner_id").InnerText & "_" & element.SelectSingleNode("id").InnerText & "&message=" & tmpMessage & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
             Else
-                navigateState = 2
                 'Публикуем пост с картинкой на страницу группы
-                tmpPost = getFromXML("https://api.vk.com/method/wall.post.xml?owner_id=-" & TextBoxGroupID1.Text & "&attachments=photo" & element.SelectSingleNode("owner_id").InnerText & "_" & element.SelectSingleNode("id").InnerText & "&message=" & TextBoxMessage1.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60", "/response", "post_id")
-                'Лайкаем созданный пост
-                If CheckBox3.Checked = True Then WebBrowser1.Navigate("https://api.vk.com/method/likes.add.xml?owner_id=-" & TextBoxGroupID1.Text & "&type=post&item_id=" & tmpPost & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+                If TextBoxGroupID1.Text <> "" Then
+                    navigateState = 2
+                    tmpPost = getFromXML("https://api.vk.com/method/wall.post.xml?owner_id=-" & TextBoxGroupID1.Text & "&attachments=photo" & element.SelectSingleNode("owner_id").InnerText & "_" & element.SelectSingleNode("id").InnerText & "&message=" & tmpMessage & "&access_token=" & TextBoxToken1.Text & "&v=5.60", "/response", "post_id")
+                    'Лайкаем созданный пост
+                    If CheckBox3.Checked = True Then WebBrowser1.Navigate("https://api.vk.com/method/likes.add.xml?owner_id=-" & TextBoxGroupID1.Text & "&type=post&item_id=" & tmpPost & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+                Else
+                    MsgBox("Не заполнен ID группы")
+                End If
             End If
         Next
     End Sub

@@ -57,6 +57,7 @@ Partial Class Form1
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.VKTimer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -73,7 +74,7 @@ Partial Class Form1
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.VKTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -274,9 +275,11 @@ Partial Class Form1
         '
         'TextBoxGroupID1
         '
+        Me.TextBoxGroupID1.BackColor = System.Drawing.SystemColors.Window
         Me.TextBoxGroupID1.Location = New System.Drawing.Point(304, 104)
         Me.TextBoxGroupID1.Multiline = True
         Me.TextBoxGroupID1.Name = "TextBoxGroupID1"
+        Me.TextBoxGroupID1.ReadOnly = True
         Me.TextBoxGroupID1.Size = New System.Drawing.Size(280, 24)
         Me.TextBoxGroupID1.TabIndex = 20
         '
@@ -417,6 +420,16 @@ Partial Class Form1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Автоматический постинг"
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(96, 24)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(80, 24)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "Перемашать"
+        Me.ToolTip1.SetToolTip(Me.Button5, "Перемешать файлы в списке")
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'CheckBox3
         '
         Me.CheckBox3.Location = New System.Drawing.Point(392, 416)
@@ -520,6 +533,7 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.Window
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -528,10 +542,10 @@ Partial Class Form1
         Me.TabPage1.Size = New System.Drawing.Size(608, 686)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Авторизация"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.Window
         Me.TabPage2.Controls.Add(Me.GroupBox3)
         Me.TabPage2.Controls.Add(Me.GroupBox5)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
@@ -539,10 +553,10 @@ Partial Class Form1
         Me.TabPage2.Size = New System.Drawing.Size(608, 686)
         Me.TabPage2.TabIndex = 2
         Me.TabPage2.Text = "Постинг"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'TabPageDebug1
         '
+        Me.TabPageDebug1.BackColor = System.Drawing.SystemColors.Window
         Me.TabPageDebug1.Controls.Add(Me.GroupBox4)
         Me.TabPageDebug1.Location = New System.Drawing.Point(4, 22)
         Me.TabPageDebug1.Name = "TabPageDebug1"
@@ -550,7 +564,6 @@ Partial Class Form1
         Me.TabPageDebug1.Size = New System.Drawing.Size(608, 686)
         Me.TabPageDebug1.TabIndex = 1
         Me.TabPageDebug1.Text = "Отладка"
-        Me.TabPageDebug1.UseVisualStyleBackColor = True
         '
         'NotifyIcon1
         '
@@ -558,15 +571,9 @@ Partial Class Form1
         Me.NotifyIcon1.Text = "VKPost"
         Me.NotifyIcon1.Visible = True
         '
-        'Button5
+        'VKTimer2
         '
-        Me.Button5.Location = New System.Drawing.Point(96, 24)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(80, 24)
-        Me.Button5.TabIndex = 8
-        Me.Button5.Text = "Перемашать"
-        Me.ToolTip1.SetToolTip(Me.Button5, "Перемешать файлы в списке")
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.VKTimer2.Interval = 1000
         '
         'Form1
         '
@@ -647,4 +654,5 @@ Partial Class Form1
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Button5 As Button
+    Friend WithEvents VKTimer2 As Timer
 End Class
