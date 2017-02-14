@@ -57,9 +57,33 @@ Partial Class Form1
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.VKTimer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TCBox24 = New System.Windows.Forms.CheckBox()
+        Me.TCBox23 = New System.Windows.Forms.CheckBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.TCBox22 = New System.Windows.Forms.CheckBox()
+        Me.TCBox21 = New System.Windows.Forms.CheckBox()
+        Me.TCBox20 = New System.Windows.Forms.CheckBox()
+        Me.TCBox19 = New System.Windows.Forms.CheckBox()
+        Me.TCBox18 = New System.Windows.Forms.CheckBox()
+        Me.TCBox17 = New System.Windows.Forms.CheckBox()
+        Me.TCBox16 = New System.Windows.Forms.CheckBox()
+        Me.TCBox15 = New System.Windows.Forms.CheckBox()
+        Me.TCBox14 = New System.Windows.Forms.CheckBox()
+        Me.TCBox13 = New System.Windows.Forms.CheckBox()
+        Me.TCBox12 = New System.Windows.Forms.CheckBox()
+        Me.TCBox11 = New System.Windows.Forms.CheckBox()
+        Me.TCBox10 = New System.Windows.Forms.CheckBox()
+        Me.TCBox9 = New System.Windows.Forms.CheckBox()
+        Me.TCBox8 = New System.Windows.Forms.CheckBox()
+        Me.TCBox7 = New System.Windows.Forms.CheckBox()
+        Me.TCBox6 = New System.Windows.Forms.CheckBox()
+        Me.TCBox5 = New System.Windows.Forms.CheckBox()
+        Me.TCBox4 = New System.Windows.Forms.CheckBox()
+        Me.TCBox3 = New System.Windows.Forms.CheckBox()
+        Me.TCBox2 = New System.Windows.Forms.CheckBox()
+        Me.TCBox1 = New System.Windows.Forms.CheckBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Button3 = New System.Windows.Forms.Button()
@@ -70,11 +94,25 @@ Partial Class Form1
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.TabPageDebug1 = New System.Windows.Forms.TabPage()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.VKTimer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.VKTimer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -84,12 +122,14 @@ Partial Class Form1
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.TabPageDebug1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(192, 184)
+        Me.Button1.Location = New System.Drawing.Point(200, 152)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(192, 24)
         Me.Button1.TabIndex = 1
@@ -294,7 +334,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(392, 184)
+        Me.Button2.Location = New System.Drawing.Point(392, 152)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(192, 24)
         Me.Button2.TabIndex = 22
@@ -316,7 +356,7 @@ Partial Class Form1
         Me.TextBoxMessage1.Location = New System.Drawing.Point(8, 40)
         Me.TextBoxMessage1.Multiline = True
         Me.TextBoxMessage1.Name = "TextBoxMessage1"
-        Me.TextBoxMessage1.Size = New System.Drawing.Size(576, 88)
+        Me.TextBoxMessage1.Size = New System.Drawing.Size(576, 56)
         Me.TextBoxMessage1.TabIndex = 23
         '
         'GroupBox1
@@ -356,14 +396,14 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.TextBoxMessage1)
         Me.GroupBox3.Location = New System.Drawing.Point(8, 8)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(592, 214)
+        Me.GroupBox3.Size = New System.Drawing.Size(592, 184)
         Me.GroupBox3.TabIndex = 27
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Ручное создание поста"
         '
         'TextBoxDescription1
         '
-        Me.TextBoxDescription1.Location = New System.Drawing.Point(8, 152)
+        Me.TextBoxDescription1.Location = New System.Drawing.Point(8, 120)
         Me.TextBoxDescription1.Multiline = True
         Me.TextBoxDescription1.Name = "TextBoxDescription1"
         Me.TextBoxDescription1.Size = New System.Drawing.Size(576, 24)
@@ -372,7 +412,7 @@ Partial Class Form1
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(8, 136)
+        Me.Label13.Location = New System.Drawing.Point(8, 104)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(85, 13)
         Me.Label13.TabIndex = 25
@@ -400,31 +440,305 @@ Partial Class Form1
         '
         'VKTimer1
         '
-        Me.VKTimer1.Interval = 900000
+        Me.VKTimer1.Interval = 300000
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.TCBox24)
+        Me.GroupBox5.Controls.Add(Me.TCBox23)
+        Me.GroupBox5.Controls.Add(Me.Button4)
+        Me.GroupBox5.Controls.Add(Me.TCBox22)
+        Me.GroupBox5.Controls.Add(Me.TCBox21)
+        Me.GroupBox5.Controls.Add(Me.TCBox20)
+        Me.GroupBox5.Controls.Add(Me.TCBox19)
+        Me.GroupBox5.Controls.Add(Me.TCBox18)
+        Me.GroupBox5.Controls.Add(Me.TCBox17)
+        Me.GroupBox5.Controls.Add(Me.TCBox16)
+        Me.GroupBox5.Controls.Add(Me.TCBox15)
+        Me.GroupBox5.Controls.Add(Me.TCBox14)
+        Me.GroupBox5.Controls.Add(Me.TCBox13)
+        Me.GroupBox5.Controls.Add(Me.TCBox12)
+        Me.GroupBox5.Controls.Add(Me.TCBox11)
+        Me.GroupBox5.Controls.Add(Me.TCBox10)
+        Me.GroupBox5.Controls.Add(Me.TCBox9)
+        Me.GroupBox5.Controls.Add(Me.TCBox8)
+        Me.GroupBox5.Controls.Add(Me.TCBox7)
+        Me.GroupBox5.Controls.Add(Me.TCBox6)
+        Me.GroupBox5.Controls.Add(Me.TCBox5)
+        Me.GroupBox5.Controls.Add(Me.TCBox4)
+        Me.GroupBox5.Controls.Add(Me.TCBox3)
+        Me.GroupBox5.Controls.Add(Me.TCBox2)
+        Me.GroupBox5.Controls.Add(Me.TCBox1)
         Me.GroupBox5.Controls.Add(Me.Button5)
         Me.GroupBox5.Controls.Add(Me.CheckBox3)
-        Me.GroupBox5.Controls.Add(Me.Button4)
         Me.GroupBox5.Controls.Add(Me.ListView1)
         Me.GroupBox5.Controls.Add(Me.Button3)
         Me.GroupBox5.Controls.Add(Me.CheckBox1)
         Me.GroupBox5.Controls.Add(Me.CheckBox2)
         Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.TrackBar1)
-        Me.GroupBox5.Location = New System.Drawing.Point(8, 232)
+        Me.GroupBox5.Location = New System.Drawing.Point(8, 200)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(592, 448)
+        Me.GroupBox5.Size = New System.Drawing.Size(592, 480)
         Me.GroupBox5.TabIndex = 29
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Автоматический постинг"
         '
+        'TCBox24
+        '
+        Me.TCBox24.AutoSize = True
+        Me.TCBox24.Location = New System.Drawing.Point(368, 88)
+        Me.TCBox24.Name = "TCBox24"
+        Me.TCBox24.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox24.TabIndex = 32
+        Me.TCBox24.Text = "23"
+        Me.TCBox24.UseVisualStyleBackColor = True
+        '
+        'TCBox23
+        '
+        Me.TCBox23.AutoSize = True
+        Me.TCBox23.Location = New System.Drawing.Point(328, 88)
+        Me.TCBox23.Name = "TCBox23"
+        Me.TCBox23.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox23.TabIndex = 31
+        Me.TCBox23.Text = "22"
+        Me.TCBox23.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(392, 448)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(192, 24)
+        Me.Button4.TabIndex = 6
+        Me.Button4.Text = "Очистить"
+        Me.ToolTip1.SetToolTip(Me.Button4, "Очистка списка фотографий")
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'TCBox22
+        '
+        Me.TCBox22.AutoSize = True
+        Me.TCBox22.Location = New System.Drawing.Point(296, 88)
+        Me.TCBox22.Name = "TCBox22"
+        Me.TCBox22.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox22.TabIndex = 30
+        Me.TCBox22.Text = "21"
+        Me.TCBox22.UseVisualStyleBackColor = True
+        '
+        'TCBox21
+        '
+        Me.TCBox21.AutoSize = True
+        Me.TCBox21.Location = New System.Drawing.Point(264, 88)
+        Me.TCBox21.Name = "TCBox21"
+        Me.TCBox21.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox21.TabIndex = 29
+        Me.TCBox21.Text = "20"
+        Me.TCBox21.UseVisualStyleBackColor = True
+        '
+        'TCBox20
+        '
+        Me.TCBox20.AutoSize = True
+        Me.TCBox20.Location = New System.Drawing.Point(232, 88)
+        Me.TCBox20.Name = "TCBox20"
+        Me.TCBox20.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox20.TabIndex = 28
+        Me.TCBox20.Text = "19"
+        Me.TCBox20.UseVisualStyleBackColor = True
+        '
+        'TCBox19
+        '
+        Me.TCBox19.AutoSize = True
+        Me.TCBox19.Location = New System.Drawing.Point(200, 88)
+        Me.TCBox19.Name = "TCBox19"
+        Me.TCBox19.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox19.TabIndex = 27
+        Me.TCBox19.Text = "18"
+        Me.TCBox19.UseVisualStyleBackColor = True
+        '
+        'TCBox18
+        '
+        Me.TCBox18.AutoSize = True
+        Me.TCBox18.Location = New System.Drawing.Point(168, 88)
+        Me.TCBox18.Name = "TCBox18"
+        Me.TCBox18.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox18.TabIndex = 26
+        Me.TCBox18.Text = "17"
+        Me.TCBox18.UseVisualStyleBackColor = True
+        '
+        'TCBox17
+        '
+        Me.TCBox17.AutoSize = True
+        Me.TCBox17.Location = New System.Drawing.Point(136, 88)
+        Me.TCBox17.Name = "TCBox17"
+        Me.TCBox17.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox17.TabIndex = 25
+        Me.TCBox17.Text = "16"
+        Me.TCBox17.UseVisualStyleBackColor = True
+        '
+        'TCBox16
+        '
+        Me.TCBox16.AutoSize = True
+        Me.TCBox16.Location = New System.Drawing.Point(104, 88)
+        Me.TCBox16.Name = "TCBox16"
+        Me.TCBox16.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox16.TabIndex = 24
+        Me.TCBox16.Text = "15"
+        Me.TCBox16.UseVisualStyleBackColor = True
+        '
+        'TCBox15
+        '
+        Me.TCBox15.AutoSize = True
+        Me.TCBox15.Location = New System.Drawing.Point(72, 88)
+        Me.TCBox15.Name = "TCBox15"
+        Me.TCBox15.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox15.TabIndex = 23
+        Me.TCBox15.Text = "14"
+        Me.TCBox15.UseVisualStyleBackColor = True
+        '
+        'TCBox14
+        '
+        Me.TCBox14.AutoSize = True
+        Me.TCBox14.Location = New System.Drawing.Point(40, 88)
+        Me.TCBox14.Name = "TCBox14"
+        Me.TCBox14.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox14.TabIndex = 22
+        Me.TCBox14.Text = "13"
+        Me.TCBox14.UseVisualStyleBackColor = True
+        '
+        'TCBox13
+        '
+        Me.TCBox13.AutoSize = True
+        Me.TCBox13.Location = New System.Drawing.Point(8, 88)
+        Me.TCBox13.Name = "TCBox13"
+        Me.TCBox13.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox13.TabIndex = 21
+        Me.TCBox13.Text = "12"
+        Me.TCBox13.UseVisualStyleBackColor = True
+        '
+        'TCBox12
+        '
+        Me.TCBox12.AutoSize = True
+        Me.TCBox12.Location = New System.Drawing.Point(368, 64)
+        Me.TCBox12.Name = "TCBox12"
+        Me.TCBox12.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox12.TabIndex = 20
+        Me.TCBox12.Text = "11"
+        Me.TCBox12.UseVisualStyleBackColor = True
+        '
+        'TCBox11
+        '
+        Me.TCBox11.AutoSize = True
+        Me.TCBox11.Location = New System.Drawing.Point(328, 64)
+        Me.TCBox11.Name = "TCBox11"
+        Me.TCBox11.Size = New System.Drawing.Size(38, 17)
+        Me.TCBox11.TabIndex = 19
+        Me.TCBox11.Text = "10"
+        Me.TCBox11.UseVisualStyleBackColor = True
+        '
+        'TCBox10
+        '
+        Me.TCBox10.AutoSize = True
+        Me.TCBox10.Location = New System.Drawing.Point(296, 64)
+        Me.TCBox10.Name = "TCBox10"
+        Me.TCBox10.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox10.TabIndex = 18
+        Me.TCBox10.Text = "9"
+        Me.TCBox10.UseVisualStyleBackColor = True
+        '
+        'TCBox9
+        '
+        Me.TCBox9.AutoSize = True
+        Me.TCBox9.Location = New System.Drawing.Point(264, 64)
+        Me.TCBox9.Name = "TCBox9"
+        Me.TCBox9.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox9.TabIndex = 17
+        Me.TCBox9.Text = "8"
+        Me.TCBox9.UseVisualStyleBackColor = True
+        '
+        'TCBox8
+        '
+        Me.TCBox8.AutoSize = True
+        Me.TCBox8.Location = New System.Drawing.Point(232, 64)
+        Me.TCBox8.Name = "TCBox8"
+        Me.TCBox8.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox8.TabIndex = 16
+        Me.TCBox8.Text = "7"
+        Me.TCBox8.UseVisualStyleBackColor = True
+        '
+        'TCBox7
+        '
+        Me.TCBox7.AutoSize = True
+        Me.TCBox7.Location = New System.Drawing.Point(200, 64)
+        Me.TCBox7.Name = "TCBox7"
+        Me.TCBox7.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox7.TabIndex = 15
+        Me.TCBox7.Text = "6"
+        Me.TCBox7.UseVisualStyleBackColor = True
+        '
+        'TCBox6
+        '
+        Me.TCBox6.AutoSize = True
+        Me.TCBox6.Location = New System.Drawing.Point(168, 64)
+        Me.TCBox6.Name = "TCBox6"
+        Me.TCBox6.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox6.TabIndex = 14
+        Me.TCBox6.Text = "5"
+        Me.TCBox6.UseVisualStyleBackColor = True
+        '
+        'TCBox5
+        '
+        Me.TCBox5.AutoSize = True
+        Me.TCBox5.Location = New System.Drawing.Point(136, 64)
+        Me.TCBox5.Name = "TCBox5"
+        Me.TCBox5.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox5.TabIndex = 13
+        Me.TCBox5.Text = "4"
+        Me.TCBox5.UseVisualStyleBackColor = True
+        '
+        'TCBox4
+        '
+        Me.TCBox4.AutoSize = True
+        Me.TCBox4.Location = New System.Drawing.Point(104, 64)
+        Me.TCBox4.Name = "TCBox4"
+        Me.TCBox4.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox4.TabIndex = 12
+        Me.TCBox4.Text = "3"
+        Me.TCBox4.UseVisualStyleBackColor = True
+        '
+        'TCBox3
+        '
+        Me.TCBox3.AutoSize = True
+        Me.TCBox3.Location = New System.Drawing.Point(72, 64)
+        Me.TCBox3.Name = "TCBox3"
+        Me.TCBox3.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox3.TabIndex = 11
+        Me.TCBox3.Text = "2"
+        Me.TCBox3.UseVisualStyleBackColor = True
+        '
+        'TCBox2
+        '
+        Me.TCBox2.AutoSize = True
+        Me.TCBox2.Location = New System.Drawing.Point(40, 64)
+        Me.TCBox2.Name = "TCBox2"
+        Me.TCBox2.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox2.TabIndex = 10
+        Me.TCBox2.Text = "1"
+        Me.TCBox2.UseVisualStyleBackColor = True
+        '
+        'TCBox1
+        '
+        Me.TCBox1.AutoSize = True
+        Me.TCBox1.Location = New System.Drawing.Point(8, 64)
+        Me.TCBox1.Name = "TCBox1"
+        Me.TCBox1.Size = New System.Drawing.Size(32, 17)
+        Me.TCBox1.TabIndex = 9
+        Me.TCBox1.Text = "0"
+        Me.TCBox1.UseVisualStyleBackColor = True
+        '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(96, 24)
+        Me.Button5.Location = New System.Drawing.Point(200, 448)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(80, 24)
+        Me.Button5.Size = New System.Drawing.Size(192, 24)
         Me.Button5.TabIndex = 8
         Me.Button5.Text = "Перемашать"
         Me.ToolTip1.SetToolTip(Me.Button5, "Перемешать файлы в списке")
@@ -432,33 +746,23 @@ Partial Class Form1
         '
         'CheckBox3
         '
-        Me.CheckBox3.Location = New System.Drawing.Point(392, 416)
+        Me.CheckBox3.Location = New System.Drawing.Point(408, 64)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(192, 24)
+        Me.CheckBox3.Size = New System.Drawing.Size(176, 24)
         Me.CheckBox3.TabIndex = 7
         Me.CheckBox3.Text = "Мне нравится"
         Me.ToolTip1.SetToolTip(Me.CheckBox3, "Автоматический лайк поста на стене группы")
         Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(184, 24)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(80, 24)
-        Me.Button4.TabIndex = 6
-        Me.Button4.Text = "Очистить"
-        Me.ToolTip1.SetToolTip(Me.Button4, "Очистка списка фотографий")
-        Me.Button4.UseVisualStyleBackColor = True
         '
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(8, 64)
+        Me.ListView1.Location = New System.Drawing.Point(8, 120)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(576, 344)
+        Me.ListView1.Size = New System.Drawing.Size(576, 320)
         Me.ListView1.TabIndex = 5
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -470,9 +774,9 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(8, 24)
+        Me.Button3.Location = New System.Drawing.Point(8, 448)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(80, 24)
+        Me.Button3.Size = New System.Drawing.Size(192, 24)
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "Добавить"
         Me.ToolTip1.SetToolTip(Me.Button3, "Добавление фотографий в список")
@@ -480,9 +784,9 @@ Partial Class Form1
         '
         'CheckBox1
         '
-        Me.CheckBox1.Location = New System.Drawing.Point(8, 416)
+        Me.CheckBox1.Location = New System.Drawing.Point(408, 16)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(192, 24)
+        Me.CheckBox1.Size = New System.Drawing.Size(176, 24)
         Me.CheckBox1.TabIndex = 2
         Me.CheckBox1.Text = "Пост на стену пользователя"
         Me.ToolTip1.SetToolTip(Me.CheckBox1, "Автоматический постинг на стену пользователя")
@@ -490,9 +794,9 @@ Partial Class Form1
         '
         'CheckBox2
         '
-        Me.CheckBox2.Location = New System.Drawing.Point(200, 416)
+        Me.CheckBox2.Location = New System.Drawing.Point(408, 40)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(192, 24)
+        Me.CheckBox2.Size = New System.Drawing.Size(176, 24)
         Me.CheckBox2.TabIndex = 3
         Me.CheckBox2.Text = "Пост на стену группы"
         Me.ToolTip1.SetToolTip(Me.CheckBox2, "Автоматический постинг на стену группы")
@@ -500,11 +804,11 @@ Partial Class Form1
         '
         'Label12
         '
-        Me.Label12.Location = New System.Drawing.Point(272, 24)
+        Me.Label12.Location = New System.Drawing.Point(8, 24)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(112, 24)
         Me.Label12.TabIndex = 1
-        Me.Label12.Text = "Интервал, 15 мин."
+        Me.Label12.Text = "Интервал, 5 мин."
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TrackBar1
@@ -512,18 +816,19 @@ Partial Class Form1
         Me.TrackBar1.AutoSize = False
         Me.TrackBar1.BackColor = System.Drawing.SystemColors.Window
         Me.TrackBar1.LargeChange = 15
-        Me.TrackBar1.Location = New System.Drawing.Point(384, 24)
-        Me.TrackBar1.Maximum = 60
-        Me.TrackBar1.Minimum = 15
+        Me.TrackBar1.Location = New System.Drawing.Point(120, 24)
+        Me.TrackBar1.Maximum = 120
+        Me.TrackBar1.Minimum = 5
         Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(200, 32)
+        Me.TrackBar1.Size = New System.Drawing.Size(288, 32)
         Me.TrackBar1.TabIndex = 0
-        Me.TrackBar1.Value = 15
+        Me.TrackBar1.Value = 5
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPageDebug1)
         Me.TabControl1.Location = New System.Drawing.Point(8, 8)
         Me.TabControl1.Name = "TabControl1"
@@ -554,6 +859,108 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 2
         Me.TabPage2.Text = "Постинг"
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.GroupBox6)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(608, 686)
+        Me.TabPage3.TabIndex = 3
+        Me.TabPage3.Text = "Закладки"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.Label16)
+        Me.GroupBox6.Controls.Add(Me.Label15)
+        Me.GroupBox6.Controls.Add(Me.WebBrowser2)
+        Me.GroupBox6.Controls.Add(Me.TextBox5)
+        Me.GroupBox6.Controls.Add(Me.Label14)
+        Me.GroupBox6.Controls.Add(Me.Button6)
+        Me.GroupBox6.Controls.Add(Me.ListView2)
+        Me.GroupBox6.Controls.Add(Me.Button8)
+        Me.GroupBox6.Location = New System.Drawing.Point(8, 8)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(592, 672)
+        Me.GroupBox6.TabIndex = 30
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Автоматический постинг"
+        '
+        'WebBrowser2
+        '
+        Me.WebBrowser2.AllowWebBrowserDrop = False
+        Me.WebBrowser2.Location = New System.Drawing.Point(8, 368)
+        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser2.Name = "WebBrowser2"
+        Me.WebBrowser2.ScrollBarsEnabled = False
+        Me.WebBrowser2.Size = New System.Drawing.Size(576, 264)
+        Me.WebBrowser2.TabIndex = 29
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(8, 40)
+        Me.TextBox5.Multiline = True
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(576, 24)
+        Me.TextBox5.TabIndex = 28
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(8, 24)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(52, 13)
+        Me.Label14.TabIndex = 27
+        Me.Label14.Text = "Owner ID"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(392, 640)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(192, 24)
+        Me.Button6.TabIndex = 6
+        Me.Button6.Text = "Удалить все"
+        Me.ToolTip1.SetToolTip(Me.Button6, "Очистка списка фотографий")
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'ListView2
+        '
+        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.ListView2.FullRowSelect = True
+        Me.ListView2.GridLines = True
+        Me.ListView2.Location = New System.Drawing.Point(8, 72)
+        Me.ListView2.MultiSelect = False
+        Me.ListView2.Name = "ListView2"
+        Me.ListView2.Size = New System.Drawing.Size(576, 272)
+        Me.ListView2.TabIndex = 5
+        Me.ListView2.UseCompatibleStateImageBehavior = False
+        Me.ListView2.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Type"
+        Me.ColumnHeader2.Width = 144
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "ID"
+        Me.ColumnHeader3.Width = 156
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Owner ID"
+        Me.ColumnHeader4.Width = 156
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(200, 640)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(192, 24)
+        Me.Button8.TabIndex = 4
+        Me.Button8.Text = "Загрузить"
+        Me.ToolTip1.SetToolTip(Me.Button8, "Добавление фотографий в список")
+        Me.Button8.UseVisualStyleBackColor = True
+        '
         'TabPageDebug1
         '
         Me.TabPageDebug1.BackColor = System.Drawing.SystemColors.Window
@@ -575,6 +982,28 @@ Partial Class Form1
         '
         Me.VKTimer2.Interval = 1000
         '
+        'VKTimer3
+        '
+        Me.VKTimer3.Interval = 50
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(8, 352)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(79, 13)
+        Me.Label15.TabIndex = 30
+        Me.Label15.Text = "Всего лайков:"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(136, 352)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(102, 13)
+        Me.Label16.TabIndex = 31
+        Me.Label16.Text = "Осталось удалить:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -584,7 +1013,7 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(640, 760)
+        Me.MinimumSize = New System.Drawing.Size(640, 736)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VKPost"
@@ -596,10 +1025,14 @@ Partial Class Form1
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.TabPageDebug1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -655,4 +1088,42 @@ Partial Class Form1
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Button5 As Button
     Friend WithEvents VKTimer2 As Timer
+    Friend WithEvents TCBox24 As CheckBox
+    Friend WithEvents TCBox23 As CheckBox
+    Friend WithEvents TCBox22 As CheckBox
+    Friend WithEvents TCBox21 As CheckBox
+    Friend WithEvents TCBox20 As CheckBox
+    Friend WithEvents TCBox19 As CheckBox
+    Friend WithEvents TCBox18 As CheckBox
+    Friend WithEvents TCBox17 As CheckBox
+    Friend WithEvents TCBox16 As CheckBox
+    Friend WithEvents TCBox15 As CheckBox
+    Friend WithEvents TCBox14 As CheckBox
+    Friend WithEvents TCBox13 As CheckBox
+    Friend WithEvents TCBox12 As CheckBox
+    Friend WithEvents TCBox11 As CheckBox
+    Friend WithEvents TCBox10 As CheckBox
+    Friend WithEvents TCBox9 As CheckBox
+    Friend WithEvents TCBox8 As CheckBox
+    Friend WithEvents TCBox7 As CheckBox
+    Friend WithEvents TCBox6 As CheckBox
+    Friend WithEvents TCBox5 As CheckBox
+    Friend WithEvents TCBox4 As CheckBox
+    Friend WithEvents TCBox3 As CheckBox
+    Friend WithEvents TCBox2 As CheckBox
+    Friend WithEvents TCBox1 As CheckBox
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Button6 As Button
+    Friend WithEvents ListView2 As ListView
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents Button8 As Button
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents VKTimer3 As Timer
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents WebBrowser2 As WebBrowser
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
 End Class

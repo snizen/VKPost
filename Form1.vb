@@ -10,8 +10,7 @@ Public Class Form1
     Dim tmpPost As String
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ListView1.Columns.Item(0).Width = ListView1.Width - 24
-        WebBrowser1.Navigate("https://oauth.vk.com/authorize?client_id=5799717&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=photos,messages,wall&response_type=token&v=5.60&state=123456")
+        WebBrowser1.Navigate("https://oauth.vk.com/authorize?client_id=5799717&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends,photos,messages,wall&response_type=token&v=5.60&state=123456")
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
@@ -96,7 +95,9 @@ Public Class Form1
             End Using
         End Using
 
-        'Берем описание картинки из caption.txt
+        TextBoxDescription1.Text = ""
+
+        'Берем описание картинки из общего caption.txt
         Try
             Dim tFilesDir As String = FileIO.FileSystem.GetParentPath(tFileName)
             Dim txtReaderC1 As New System.IO.StreamReader(tFilesDir & "\caption.txt")
@@ -104,13 +105,26 @@ Public Class Form1
         Catch
         End Try
 
-        'Добавляем к описанию картинки текст из одноименного txt
+        'Заменяем описание картинки из одноименного txt если он есть
         Try
             Dim txtReaderC2 As New System.IO.StreamReader(Replace(tFileName, ".jpg", "-caption.txt"))
-            TextBoxDescription1.Text = TextBoxDescription1.Text & " " & txtReaderC2.ReadToEnd
+            TextBoxDescription1.Text = txtReaderC2.ReadToEnd
         Catch
         End Try
 
+        'Формируем хэштеги для картинки из имени файла в формате ИМЯПОЛЬЗОВАТЕЛЯ - ИМЯАВТОРА - НАЗВАНИЕФОТО - ИДЕНТИФИКАТОРФОТО - ЧТОНИБУДЬЕЩЕ ,разделенное " - "
+        Try
+            Dim tFileNameN As String = FileIO.FileSystem.GetName(tFileName)
+            tFileNameN = Replace(tFileNameN, ".jpg", "")
+            Dim substrings() As String = tFileNameN.Split(" - ")
+            For Each substring In substrings
+                substring = Replace(substring, "  ", " ")
+                substring = Replace(substring, " ", "_")
+                'Формируем описание с хэштэгами
+                If substring <> "-" And substring <> " " And substring <> "" Then TextBoxDescription1.Text = TextBoxDescription1.Text & " #" & substring
+            Next
+        Catch
+        End Try
 
         Dim tmpDescription As String = ConvEscape(TextBoxDescription1.Text)
 
@@ -127,10 +141,10 @@ Public Class Form1
             Catch
             End Try
 
-            'Добавляем к тексту поста текст из одноименного txt
+            'Заменяем текст поста текстом из одноименного txt если он есть
             Try
                 Dim txtReaderM2 As New System.IO.StreamReader(Replace(tFileName, ".jpg", "-message.txt"))
-                TextBoxMessage1.Text = TextBoxMessage1.Text & " " & txtReaderM2.ReadToEnd
+                TextBoxMessage1.Text = txtReaderM2.ReadToEnd
             Catch
             End Try
 
@@ -145,6 +159,7 @@ Public Class Form1
                 If TextBoxGroupID1.Text <> "" Then
                     navigateState = 2
                     tmpPost = getFromXML("https://api.vk.com/method/wall.post.xml?owner_id=-" & TextBoxGroupID1.Text & "&attachments=photo" & element.SelectSingleNode("owner_id").InnerText & "_" & element.SelectSingleNode("id").InnerText & "&message=" & tmpMessage & "&access_token=" & TextBoxToken1.Text & "&v=5.60", "/response", "post_id")
+
                     'Лайкаем созданный пост
                     If CheckBox3.Checked = True Then WebBrowser1.Navigate("https://api.vk.com/method/likes.add.xml?owner_id=-" & TextBoxGroupID1.Text & "&type=post&item_id=" & tmpPost & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
                 Else
@@ -266,6 +281,58 @@ Public Class Form1
             ListView1.Items.Add(ArrayList(Index))
             ArrayList.RemoveAt(Index)
         End While
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        ListView2.Items.Clear()
+
+        Dim xmlDocpost As New XmlDocument
+        xmlDocpost.Load("https://api.vk.com/method/fave.getPosts.xml?count=999&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        Dim answerspost As XmlNodeList = xmlDocpost.DocumentElement.SelectNodes("/response/items/post")
+        For Each element As XmlNode In answerspost
+            ListView2.Items.Add("post")
+            ListView2.Items.Item(ListView2.Items.Count - 1).SubItems.Add(element.SelectSingleNode("id").InnerText)
+            ListView2.Items.Item(ListView2.Items.Count - 1).SubItems.Add(element.SelectSingleNode("owner_id").InnerText)
+        Next
+
+        Dim xmlDocphoto As New XmlDocument
+        xmlDocphoto.Load("https://api.vk.com/method/fave.getPhotos.xml?count=999&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        Dim answersphoto As XmlNodeList = xmlDocphoto.DocumentElement.SelectNodes("/response/items/photo")
+        For Each element As XmlNode In answersphoto
+            ListView2.Items.Add("photo")
+            ListView2.Items.Item(ListView2.Items.Count - 1).SubItems.Add(element.SelectSingleNode("id").InnerText)
+            ListView2.Items.Item(ListView2.Items.Count - 1).SubItems.Add(element.SelectSingleNode("owner_id").InnerText)
+        Next
+        Label15.Text = "Всего лайков: " & ListView2.Items.Count - 1
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        If TextBox5.Text = "" Then
+            If MsgBox("Поле 'Owner ID' не заполнено, будут удалены все лайки!", vbOKCancel) = vbOK Then
+                VKTimer3.Enabled = True
+            End If
+        Else
+            VKTimer3.Enabled = True
+        End If
+    End Sub
+
+    Private Sub WebBrowser2_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser2.DocumentCompleted
+        VKTimer3.Enabled = True
+    End Sub
+
+    Private Sub VKTimer3_Tick(sender As Object, e As EventArgs) Handles VKTimer3.Tick
+        Dim rnd As New Random
+        If ListView2.Items.Count > 0 Then
+            If TextBox5.Text = ListView2.Items.Item(0).SubItems(2).Text Or TextBox5.Text = "" Then
+                VKTimer3.Enabled = False
+                WebBrowser2.Navigate("https://api.vk.com/method/likes.delete.xml?owner_id=" & ListView2.Items.Item(0).SubItems(2).Text & "&type=" & ListView2.Items.Item(0).Text & "&item_id=" & ListView2.Items.Item(0).SubItems(1).Text & "&access_token=" & TextBoxToken1.Text & "&v=5.62")
+                VKTimer3.Interval = rnd.Next(3000, 6000)
+            Else
+                VKTimer3.Interval = 50
+            End If
+            ListView2.Items.Item(0).Remove()
+            Label16.Text = "Осталось удалить: " & ListView2.Items.Count - 1
+        End If
     End Sub
 
 End Class
