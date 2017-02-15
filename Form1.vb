@@ -3,13 +3,37 @@ Imports System.Net
 Imports System.Text
 Imports System.Xml
 Imports Newtonsoft.Json
+Imports Microsoft.Win32
 
 Public Class Form1
     Dim navigateState As Integer = 0
     Dim tmpNavigate As String
     Dim tmpPost As String
 
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim regKey As RegistryKey
+        regKey = Registry.CurrentUser.CreateSubKey("SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION")
+        regKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION", True)
+        regKey.SetValue("VKPost.exe", "00011001", RegistryValueKind.DWord)
+        regKey.Close()
+
+        regKey = Registry.LocalMachine.CreateSubKey("SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION")
+        regKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION", True)
+        regKey.SetValue("VKPost.exe", "00011001", RegistryValueKind.DWord)
+        regKey.Close()
+
+        regKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION", True)
+        regKey.SetValue("VKPost.vshost.exe", "00011001", RegistryValueKind.DWord)
+        regKey.Close()
+
+        regKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION", True)
+        regKey.SetValue("VKPost.vshost.exe", "00011001", RegistryValueKind.DWord)
+        regKey.Close()
+
         WebBrowser1.Navigate("https://oauth.vk.com/authorize?client_id=5799717&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends,photos,messages,wall&response_type=token&v=5.60&state=123456")
     End Sub
 
@@ -34,8 +58,9 @@ Public Class Form1
             End If
         End If
         If navigateState = 3 Then
-            TextBoxGroupID1.Text = getFromXML("https://api.vk.com/method/groups.get.xml?user_id=" & TextBoxUserID1.Text & "&filter=moder&access_token=" & TextBoxToken1.Text & "&v=5.60", "/response/items", "gid")
             navigateState = 4
+            TextBoxGroupID1.Text = getFromXML("https://api.vk.com/method/groups.get.xml?user_id=" & TextBoxUserID1.Text & "&filter=moder&access_token=" & TextBoxToken1.Text & "&v=5.60", "/response/items", "gid")
+            WebBrowser1.Navigate("http://vk.com")
         End If
     End Sub
 
@@ -335,4 +360,15 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        WebBrowser1.Navigate(WebBrowser1.Document.GetElementById("top_logout_link").GetAttribute("HREF"))
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        For Each element In WebBrowser1.Document.GetElementsByTagName("input")
+            If element.GetAttribute("name") = "email" Then element.InnerText = "22"
+            If element.GetAttribute("name") = "pass" Then element.InnerText = "22"
+        Next
+        WebBrowser1.Document.GetElementById("install_allow").InvokeMember("click")
+    End Sub
 End Class
