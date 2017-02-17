@@ -125,6 +125,8 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.VKTimer3 = New System.Windows.Forms.Timer(Me.components)
         Me.VKTimer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.TErrorBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -169,7 +171,7 @@ Partial Class Form1
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(832, 24)
+        Me.TextBox2.Size = New System.Drawing.Size(560, 24)
         Me.TextBox2.TabIndex = 5
         '
         'Label3
@@ -206,7 +208,7 @@ Partial Class Form1
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(832, 184)
+        Me.TextBox3.Size = New System.Drawing.Size(560, 184)
         Me.TextBox3.TabIndex = 9
         '
         'TextBox4
@@ -216,7 +218,7 @@ Partial Class Form1
         Me.TextBox4.Multiline = True
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(832, 24)
+        Me.TextBox4.Size = New System.Drawing.Size(560, 24)
         Me.TextBox4.TabIndex = 10
         '
         'TextBoxJSON1
@@ -226,7 +228,7 @@ Partial Class Form1
         Me.TextBoxJSON1.Multiline = True
         Me.TextBoxJSON1.Name = "TextBoxJSON1"
         Me.TextBoxJSON1.ReadOnly = True
-        Me.TextBoxJSON1.Size = New System.Drawing.Size(832, 184)
+        Me.TextBoxJSON1.Size = New System.Drawing.Size(560, 184)
         Me.TextBoxJSON1.TabIndex = 13
         '
         'Label7
@@ -254,7 +256,7 @@ Partial Class Form1
         Me.TextBoxPhotoId1.Multiline = True
         Me.TextBoxPhotoId1.Name = "TextBoxPhotoId1"
         Me.TextBoxPhotoId1.ReadOnly = True
-        Me.TextBoxPhotoId1.Size = New System.Drawing.Size(832, 24)
+        Me.TextBoxPhotoId1.Size = New System.Drawing.Size(560, 24)
         Me.TextBoxPhotoId1.TabIndex = 17
         '
         'OpenFileDialog1
@@ -323,6 +325,8 @@ Partial Class Form1
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.TErrorBox1)
+        Me.GroupBox4.Controls.Add(Me.Label17)
         Me.GroupBox4.Controls.Add(Me.Label2)
         Me.GroupBox4.Controls.Add(Me.TextBox2)
         Me.GroupBox4.Controls.Add(Me.Label3)
@@ -838,7 +842,7 @@ Partial Class Form1
         Me.ListView3.Location = New System.Drawing.Point(8, 56)
         Me.ListView3.MultiSelect = False
         Me.ListView3.Name = "ListView3"
-        Me.ListView3.Size = New System.Drawing.Size(224, 120)
+        Me.ListView3.Size = New System.Drawing.Size(224, 296)
         Me.ListView3.TabIndex = 26
         Me.ListView3.UseCompatibleStateImageBehavior = False
         Me.ListView3.View = System.Windows.Forms.View.Details
@@ -860,7 +864,7 @@ Partial Class Form1
         Me.Button10.Size = New System.Drawing.Size(27, 24)
         Me.Button10.TabIndex = 25
         Me.Button10.Text = "..."
-        Me.ToolTip1.SetToolTip(Me.Button10, "Выбор файла пользователей")
+        Me.ToolTip1.SetToolTip(Me.Button10, "Выбор xmlфайла пользователей")
         Me.Button10.UseVisualStyleBackColor = True
         '
         'Button7
@@ -884,7 +888,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(8, 184)
+        Me.Label6.Location = New System.Drawing.Point(8, 360)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 13)
         Me.Label6.TabIndex = 12
@@ -895,17 +899,17 @@ Partial Class Form1
         Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBox1.Location = New System.Drawing.Point(8, 488)
+        Me.TextBox1.Location = New System.Drawing.Point(8, 576)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(226, 168)
+        Me.TextBox1.Size = New System.Drawing.Size(226, 80)
         Me.TextBox1.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 472)
+        Me.Label1.Location = New System.Drawing.Point(8, 560)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(171, 13)
         Me.Label1.TabIndex = 3
@@ -916,11 +920,11 @@ Partial Class Form1
         Me.TextBoxToken1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxToken1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBoxToken1.Location = New System.Drawing.Point(8, 200)
+        Me.TextBoxToken1.Location = New System.Drawing.Point(8, 376)
         Me.TextBoxToken1.Multiline = True
         Me.TextBoxToken1.Name = "TextBoxToken1"
         Me.TextBoxToken1.ReadOnly = True
-        Me.TextBoxToken1.Size = New System.Drawing.Size(226, 168)
+        Me.TextBoxToken1.Size = New System.Drawing.Size(226, 80)
         Me.TextBoxToken1.TabIndex = 11
         '
         'TextBoxUserID1
@@ -928,7 +932,7 @@ Partial Class Form1
         Me.TextBoxUserID1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxUserID1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBoxUserID1.Location = New System.Drawing.Point(8, 392)
+        Me.TextBoxUserID1.Location = New System.Drawing.Point(8, 480)
         Me.TextBoxUserID1.Multiline = True
         Me.TextBoxUserID1.Name = "TextBoxUserID1"
         Me.TextBoxUserID1.ReadOnly = True
@@ -938,7 +942,7 @@ Partial Class Form1
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(8, 424)
+        Me.Label10.Location = New System.Drawing.Point(8, 512)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(48, 13)
         Me.Label10.TabIndex = 21
@@ -947,7 +951,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(8, 376)
+        Me.Label9.Location = New System.Drawing.Point(8, 464)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(41, 13)
         Me.Label9.TabIndex = 19
@@ -958,7 +962,7 @@ Partial Class Form1
         Me.TextBoxGroupID1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxGroupID1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBoxGroupID1.Location = New System.Drawing.Point(8, 440)
+        Me.TextBoxGroupID1.Location = New System.Drawing.Point(8, 528)
         Me.TextBoxGroupID1.Multiline = True
         Me.TextBoxGroupID1.Name = "TextBoxGroupID1"
         Me.TextBoxGroupID1.ReadOnly = True
@@ -1166,6 +1170,25 @@ Partial Class Form1
         '
         Me.VKTimer2.Interval = 5000
         '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(680, 24)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(26, 13)
+        Me.Label17.TabIndex = 18
+        Me.Label17.Text = "Код"
+        '
+        'TErrorBox1
+        '
+        Me.TErrorBox1.BackColor = System.Drawing.SystemColors.Window
+        Me.TErrorBox1.Location = New System.Drawing.Point(680, 40)
+        Me.TErrorBox1.Multiline = True
+        Me.TErrorBox1.Name = "TErrorBox1"
+        Me.TErrorBox1.ReadOnly = True
+        Me.TErrorBox1.Size = New System.Drawing.Size(264, 472)
+        Me.TErrorBox1.TabIndex = 19
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1303,4 +1326,6 @@ Partial Class Form1
     Friend WithEvents Button11 As Button
     Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents VKTimer2 As Timer
+    Friend WithEvents Label17 As Label
+    Friend WithEvents TErrorBox1 As TextBox
 End Class

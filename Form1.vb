@@ -286,7 +286,11 @@ Public Class Form1
                 tmpOwnerId = element.SelectSingleNode("owner_id").InnerText
             Next
 
-            My.Computer.FileSystem.DeleteFile(tFileName) 'Удаляем опубликованную картинку, что бы не повторяться
+            Try
+                My.Computer.FileSystem.DeleteFile(tFileName) 'Удаляем опубликованную картинку, что бы не повторяться
+            Catch ex As Exception
+                TErrorBox1.Text = TErrorBox1.Text & vbNewLine & "Ошибка" & vbNewLine & Date.Now & vbNewLine & ex.ToString
+            End Try
         Else
             tmpId = tFileName 'В данном случае ID картинки подставлен в переменную tFileName
             tmpOwnerId = "-" & TextBoxGroupID1.Text 'Владелец изображения - группа
