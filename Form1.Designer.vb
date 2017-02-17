@@ -46,6 +46,7 @@ Partial Class Form1
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.VKTimer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.TCBox24 = New System.Windows.Forms.CheckBox()
         Me.TCBox23 = New System.Windows.Forms.CheckBox()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -75,6 +76,7 @@ Partial Class Form1
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Button3 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
@@ -82,12 +84,31 @@ Partial Class Form1
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListView3 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBoxToken1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxUserID1 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBoxGroupID1 = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -96,44 +117,29 @@ Partial Class Form1
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.TabPageDebug1 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.VKTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.VKTimer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TextBoxGroupID1 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBoxUserID1 = New System.Windows.Forms.TextBox()
-        Me.TextBoxToken1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.VKTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.TabPageDebug1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -338,10 +344,11 @@ Partial Class Form1
         '
         'VKTimer1
         '
-        Me.VKTimer1.Interval = 300000
+        Me.VKTimer1.Interval = 150000
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Button11)
         Me.GroupBox5.Controls.Add(Me.TCBox24)
         Me.GroupBox5.Controls.Add(Me.TCBox23)
         Me.GroupBox5.Controls.Add(Me.Button4)
@@ -382,6 +389,15 @@ Partial Class Form1
         Me.GroupBox5.TabIndex = 29
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Автоматический постинг"
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(760, 384)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(192, 24)
+        Me.Button11.TabIndex = 33
+        Me.Button11.Text = "Добавить из альбомов"
+        Me.Button11.UseVisualStyleBackColor = True
         '
         'TCBox24
         '
@@ -655,7 +671,7 @@ Partial Class Form1
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader7})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.Location = New System.Drawing.Point(8, 72)
@@ -669,15 +685,20 @@ Partial Class Form1
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "Путь к файлу"
-        Me.ColumnHeader1.Width = 551
+        Me.ColumnHeader1.Width = 501
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Альбом"
+        Me.ColumnHeader7.Width = 220
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(760, 384)
+        Me.Button3.Location = New System.Drawing.Point(760, 360)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(192, 24)
         Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Добавить"
+        Me.Button3.Text = "Добавить файлы"
         Me.ToolTip1.SetToolTip(Me.Button3, "Добавление фотографий в список")
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -746,6 +767,204 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Авторизация"
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 2
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.GroupBox1, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.GroupBox2, 1, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(958, 671)
+        Me.TableLayoutPanel1.TabIndex = 27
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.WebBrowser1)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(8)
+        Me.GroupBox1.Size = New System.Drawing.Size(702, 665)
+        Me.GroupBox1.TabIndex = 25
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Браузер"
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.AllowWebBrowserDrop = False
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(8, 21)
+        Me.WebBrowser1.Margin = New System.Windows.Forms.Padding(0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.ScriptErrorsSuppressed = True
+        Me.WebBrowser1.Size = New System.Drawing.Size(686, 636)
+        Me.WebBrowser1.TabIndex = 0
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.ListView3)
+        Me.GroupBox2.Controls.Add(Me.Button10)
+        Me.GroupBox2.Controls.Add(Me.Button7)
+        Me.GroupBox2.Controls.Add(Me.Button9)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.TextBoxToken1)
+        Me.GroupBox2.Controls.Add(Me.TextBoxUserID1)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.TextBoxGroupID1)
+        Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox2.Location = New System.Drawing.Point(711, 3)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(244, 665)
+        Me.GroupBox2.TabIndex = 26
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Информация об идентификации"
+        '
+        'ListView3
+        '
+        Me.ListView3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ListView3.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.ListView3.FullRowSelect = True
+        Me.ListView3.GridLines = True
+        Me.ListView3.Location = New System.Drawing.Point(8, 56)
+        Me.ListView3.MultiSelect = False
+        Me.ListView3.Name = "ListView3"
+        Me.ListView3.Size = New System.Drawing.Size(224, 120)
+        Me.ListView3.TabIndex = 26
+        Me.ListView3.UseCompatibleStateImageBehavior = False
+        Me.ListView3.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Пользователь"
+        Me.ColumnHeader5.Width = 110
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Пароль"
+        Me.ColumnHeader6.Width = 110
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(8, 24)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(27, 24)
+        Me.Button10.TabIndex = 25
+        Me.Button10.Text = "..."
+        Me.ToolTip1.SetToolTip(Me.Button10, "Выбор файла пользователей")
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(40, 24)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(88, 24)
+        Me.Button7.TabIndex = 24
+        Me.Button7.Text = "Вход"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(136, 24)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(96, 24)
+        Me.Button9.TabIndex = 23
+        Me.Button9.Text = "Выход"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(8, 184)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(74, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "access_token"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBox1.Location = New System.Drawing.Point(8, 488)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(226, 168)
+        Me.TextBox1.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(8, 472)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(171, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = " photos.getUploadServer response"
+        '
+        'TextBoxToken1
+        '
+        Me.TextBoxToken1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBoxToken1.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBoxToken1.Location = New System.Drawing.Point(8, 200)
+        Me.TextBoxToken1.Multiline = True
+        Me.TextBoxToken1.Name = "TextBoxToken1"
+        Me.TextBoxToken1.ReadOnly = True
+        Me.TextBoxToken1.Size = New System.Drawing.Size(226, 168)
+        Me.TextBoxToken1.TabIndex = 11
+        '
+        'TextBoxUserID1
+        '
+        Me.TextBoxUserID1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBoxUserID1.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBoxUserID1.Location = New System.Drawing.Point(8, 392)
+        Me.TextBoxUserID1.Multiline = True
+        Me.TextBoxUserID1.Name = "TextBoxUserID1"
+        Me.TextBoxUserID1.ReadOnly = True
+        Me.TextBoxUserID1.Size = New System.Drawing.Size(226, 24)
+        Me.TextBoxUserID1.TabIndex = 18
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(8, 424)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(48, 13)
+        Me.Label10.TabIndex = 21
+        Me.Label10.Text = "group_id"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(8, 376)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(41, 13)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "user_id"
+        '
+        'TextBoxGroupID1
+        '
+        Me.TextBoxGroupID1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBoxGroupID1.BackColor = System.Drawing.SystemColors.Window
+        Me.TextBoxGroupID1.Location = New System.Drawing.Point(8, 440)
+        Me.TextBoxGroupID1.Multiline = True
+        Me.TextBoxGroupID1.Name = "TextBoxGroupID1"
+        Me.TextBoxGroupID1.ReadOnly = True
+        Me.TextBoxGroupID1.Size = New System.Drawing.Size(226, 24)
+        Me.TextBoxGroupID1.TabIndex = 20
+        '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Window
@@ -756,6 +975,21 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 2
         Me.TabPage2.Text = "Постинг"
         '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 1
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.GroupBox3, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.GroupBox5, 0, 1)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(964, 677)
+        Me.TableLayoutPanel2.TabIndex = 30
+        '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.TableLayoutPanel3)
@@ -765,6 +999,21 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 3
         Me.TabPage3.Text = "Закладки"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.ColumnCount = 2
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.GroupBox6, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.WebBrowser2, 1, 0)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 1
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(964, 677)
+        Me.TableLayoutPanel3.TabIndex = 32
         '
         'GroupBox6
         '
@@ -800,17 +1049,6 @@ Partial Class Form1
         Me.Label15.Size = New System.Drawing.Size(79, 13)
         Me.Label15.TabIndex = 30
         Me.Label15.Text = "Всего лайков:"
-        '
-        'WebBrowser2
-        '
-        Me.WebBrowser2.AllowWebBrowserDrop = False
-        Me.WebBrowser2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser2.Location = New System.Drawing.Point(682, 8)
-        Me.WebBrowser2.Margin = New System.Windows.Forms.Padding(8)
-        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser2.Name = "WebBrowser2"
-        Me.WebBrowser2.Size = New System.Drawing.Size(274, 661)
-        Me.WebBrowser2.TabIndex = 29
         '
         'TextBox5
         '
@@ -877,6 +1115,17 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.Button8, "Добавление фотографий в список")
         Me.Button8.UseVisualStyleBackColor = True
         '
+        'WebBrowser2
+        '
+        Me.WebBrowser2.AllowWebBrowserDrop = False
+        Me.WebBrowser2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser2.Location = New System.Drawing.Point(682, 8)
+        Me.WebBrowser2.Margin = New System.Windows.Forms.Padding(8)
+        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser2.Name = "WebBrowser2"
+        Me.WebBrowser2.Size = New System.Drawing.Size(274, 661)
+        Me.WebBrowser2.TabIndex = 29
+        '
         'TabPageDebug1
         '
         Me.TabPageDebug1.BackColor = System.Drawing.SystemColors.Window
@@ -887,193 +1136,6 @@ Partial Class Form1
         Me.TabPageDebug1.Size = New System.Drawing.Size(964, 677)
         Me.TabPageDebug1.TabIndex = 1
         Me.TabPageDebug1.Text = "Отладка"
-        '
-        'NotifyIcon1
-        '
-        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
-        Me.NotifyIcon1.Text = "VKPost"
-        Me.NotifyIcon1.Visible = True
-        '
-        'VKTimer2
-        '
-        Me.VKTimer2.Interval = 1000
-        '
-        'VKTimer3
-        '
-        Me.VKTimer3.Interval = 50
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.GroupBox1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.GroupBox2, 1, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(958, 671)
-        Me.TableLayoutPanel1.TabIndex = 27
-        '
-        'TextBoxGroupID1
-        '
-        Me.TextBoxGroupID1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBoxGroupID1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBoxGroupID1.Location = New System.Drawing.Point(8, 312)
-        Me.TextBoxGroupID1.Multiline = True
-        Me.TextBoxGroupID1.Name = "TextBoxGroupID1"
-        Me.TextBoxGroupID1.ReadOnly = True
-        Me.TextBoxGroupID1.Size = New System.Drawing.Size(264, 24)
-        Me.TextBoxGroupID1.TabIndex = 20
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(8, 248)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(41, 13)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "user_id"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(8, 296)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(48, 13)
-        Me.Label10.TabIndex = 21
-        Me.Label10.Text = "group_id"
-        '
-        'TextBoxUserID1
-        '
-        Me.TextBoxUserID1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBoxUserID1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBoxUserID1.Location = New System.Drawing.Point(8, 264)
-        Me.TextBoxUserID1.Multiline = True
-        Me.TextBoxUserID1.Name = "TextBoxUserID1"
-        Me.TextBoxUserID1.ReadOnly = True
-        Me.TextBoxUserID1.Size = New System.Drawing.Size(264, 24)
-        Me.TextBoxUserID1.TabIndex = 18
-        '
-        'TextBoxToken1
-        '
-        Me.TextBoxToken1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBoxToken1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBoxToken1.Location = New System.Drawing.Point(8, 72)
-        Me.TextBoxToken1.Multiline = True
-        Me.TextBoxToken1.Name = "TextBoxToken1"
-        Me.TextBoxToken1.ReadOnly = True
-        Me.TextBoxToken1.Size = New System.Drawing.Size(264, 168)
-        Me.TextBoxToken1.TabIndex = 11
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 344)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(171, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = " photos.getUploadServer response"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBox1.Location = New System.Drawing.Point(8, 360)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(264, 168)
-        Me.TextBox1.TabIndex = 2
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(8, 56)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(74, 13)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "access_token"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.Button7)
-        Me.GroupBox2.Controls.Add(Me.Button9)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.TextBoxToken1)
-        Me.GroupBox2.Controls.Add(Me.TextBoxUserID1)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.TextBoxGroupID1)
-        Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox2.Location = New System.Drawing.Point(673, 3)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(282, 665)
-        Me.GroupBox2.TabIndex = 26
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Информация об идентификации"
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.AllowWebBrowserDrop = False
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(8, 21)
-        Me.WebBrowser1.Margin = New System.Windows.Forms.Padding(0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.ScriptErrorsSuppressed = True
-        Me.WebBrowser1.Size = New System.Drawing.Size(648, 636)
-        Me.WebBrowser1.TabIndex = 0
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.WebBrowser1)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(8)
-        Me.GroupBox1.Size = New System.Drawing.Size(664, 665)
-        Me.GroupBox1.TabIndex = 25
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Браузер"
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.GroupBox3, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.GroupBox5, 0, 1)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(964, 677)
-        Me.TableLayoutPanel2.TabIndex = 30
-        '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.ColumnCount = 2
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.GroupBox6, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.WebBrowser2, 1, 0)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(964, 677)
-        Me.TableLayoutPanel3.TabIndex = 32
         '
         'TableLayoutPanel4
         '
@@ -1090,23 +1152,19 @@ Partial Class Form1
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(958, 671)
         Me.TableLayoutPanel4.TabIndex = 29
         '
-        'Button9
+        'NotifyIcon1
         '
-        Me.Button9.Location = New System.Drawing.Point(144, 24)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(128, 24)
-        Me.Button9.TabIndex = 23
-        Me.Button9.Text = "Выход"
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "VKPost"
+        Me.NotifyIcon1.Visible = True
         '
-        'Button7
+        'VKTimer3
         '
-        Me.Button7.Location = New System.Drawing.Point(8, 24)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(128, 24)
-        Me.Button7.TabIndex = 24
-        Me.Button7.Text = "Вход"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.VKTimer3.Interval = 50
+        '
+        'VKTimer2
+        '
+        Me.VKTimer2.Interval = 5000
         '
         'Form1
         '
@@ -1129,17 +1187,17 @@ Partial Class Form1
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         Me.TabPageDebug1.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -1183,7 +1241,6 @@ Partial Class Form1
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Button5 As Button
-    Friend WithEvents VKTimer2 As Timer
     Friend WithEvents TCBox24 As CheckBox
     Friend WithEvents TCBox23 As CheckBox
     Friend WithEvents TCBox22 As CheckBox
@@ -1239,4 +1296,11 @@ Partial Class Form1
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents Button9 As Button
     Friend WithEvents Button7 As Button
+    Friend WithEvents Button10 As Button
+    Friend WithEvents ListView3 As ListView
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents Button11 As Button
+    Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents VKTimer2 As Timer
 End Class
