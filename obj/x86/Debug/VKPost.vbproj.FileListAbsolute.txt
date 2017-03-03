@@ -10,3 +10,4 @@ d:\YandexDisk\VisualStudio\VKPost\VKPost\bin\x86\Debug\Newtonsoft.Json.xml
 d:\YandexDisk\VisualStudio\VKPost\VKPost\obj\x86\Debug\VKPost.exe
 d:\YandexDisk\VisualStudio\VKPost\VKPost\obj\x86\Debug\VKPost.pdb
 d:\YandexDisk\VisualStudio\VKPost\VKPost\obj\x86\Debug\VKPost.vbprojResolveAssemblyReference.cache
+d:\YandexDisk\VisualStudio\VKPost\VKPost\obj\x86\Debug\VKPost.Form2.resources
