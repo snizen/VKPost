@@ -225,7 +225,6 @@ Public Class Form1
                     While jr.Read
                         Try
                             If jr.Path.ToString <> jr.Value.ToString Then
-                                MsgBox(jr.Path.ToString & "<>" & jr.Value.ToString)
                                 If jr.Path = "server" Then TextBox2.Text = jr.Value 'server
                                 If jr.Path = "photo" Then
                                     TextBox3.Text = jr.Value 'photo
