@@ -86,9 +86,13 @@ Public Class Form1
         End If
     End Sub
 
-    Public Sub getUploadServer(group As String, album As String)
+    Public Sub getUploadServer(id As String, album As String)
         Dim xmlDoc As New XmlDocument
-        xmlDoc.Load("https://api.vk.com/method/photos.getUploadServer.xml?group_id=" & group & "&album_id=" & album & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        If id.Contains("-") Then 'признак того, что это ID группы, ID групп начинаются с '-'
+            xmlDoc.Load("https://api.vk.com/method/photos.getUploadServer.xml?group_id=" & id & "&album_id=" & album & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        Else
+            xmlDoc.Load("https://api.vk.com/method/photos.getUploadServer.xml?album_id=" & album & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        End If
         Dim answers As XmlNodeList = xmlDoc.DocumentElement.SelectNodes("/response")
         For Each element As XmlNode In answers
             TextBox6.Text = element.SelectSingleNode("upload_url").InnerText
@@ -186,26 +190,36 @@ Public Class Form1
     End Sub
 
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        If MsgBox("Добавить альбомы ползователя?", MsgBoxStyle.YesNo Or MsgBoxStyle.Question) = vbYes Then GetAlbums(TextBoxUserID1.Text)
+        If MsgBox("Добавить альбомы группы?", MsgBoxStyle.YesNo Or MsgBoxStyle.Question) = vbYes Then GetAlbums("-" & TextBoxGroupID1.Text, False)
+    End Sub
+
+    Private Sub GetAlbums(Id As String, Optional ClearList As Boolean = True)
         Dim xmlDocpost As New XmlDocument
         Dim ImageList1 As New ImageList With {.ColorDepth = ColorDepth.Depth32Bit}
         ListView5.LargeImageList = ImageList1
-        ListView5.Items.Clear()
-        ImageList1.Images.Clear()
+        If ClearList = True Then
+            ListView5.Items.Clear()
+            ImageList1.Images.Clear()
+        End If
         ImageList1.ImageSize = New Size(130, 97)
-        xmlDocpost.Load("https://api.vk.com/method/photos.getAlbums.xml?owner_id=-" & TextBoxGroupID1.Text & "&need_covers=1&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        xmlDocpost.Load("https://api.vk.com/method/photos.getAlbums.xml?owner_id=" & Id & "&need_covers=1&access_token=" & TextBoxToken1.Text & "&v=5.60")
         Dim answerspost As XmlNodeList = xmlDocpost.DocumentElement.SelectNodes("/response/items/album")
+        Dim rnd As New Random
+        Dim dPath As String
         For Each element As XmlNode In answerspost
-            ListView5.Items.Add(element.SelectSingleNode("title").InnerText)
-            Dim dPath As String = Path.GetTempPath & "VKPost\" & Rnd() & ".png"
+            dPath = Path.GetTempPath & "VKPost\" & rnd.Next(123456789, 987654321) '& ".png"
             Try : My.Computer.Network.DownloadFile(element.SelectSingleNode("thumb_src").InnerText, dPath) : Catch : End Try
             ImageList1.Images.Add(Bitmap.FromFile(dPath))
+            ListView5.Items.Add(element.SelectSingleNode("title").InnerText)
+            ListView5.Items.Item(ListView5.Items.Count - 1).SubItems.Add(element.SelectSingleNode("id").InnerText) 'ID альбома
+            ListView5.Items.Item(ListView5.Items.Count - 1).SubItems.Add(Id) 'ID пользователя или группы
             ListView5.Items.Item(ListView5.Items.Count - 1).ImageIndex = ImageList1.Images.Count - 1
-            ListView5.Items.Item(ListView5.Items.Count - 1).Tag = element.SelectSingleNode("id").InnerText
         Next
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
-        getUploadServer(TextBoxGroupID1.Text, ListView5.Items.Item(ListView5.SelectedItems.Item(0).Index).Tag) 'Получаем Upload сервер, ID альбома хранится в Tag'е элемента ListView'а
+        getUploadServer(ListView5.Items.Item(ListView5.SelectedItems.Item(0).Index).SubItems(2).Text, ListView5.Items.Item(ListView5.SelectedItems.Item(0).Index).SubItems(1).Text) 'Получаем Upload сервер, ID альбома хранится в Tag'е элемента ListView'а
         Label22.Text = "Всего: " & ListView1.Items.Count - 1
         VKTimer4.Enabled = True
     End Sub
@@ -319,7 +333,7 @@ Public Class Form1
         End If
     End Sub
 
-    Public Sub PostToAlbum(tFileName As String, toAlbum As String)
+    Public Sub PostToAlbum(tFileName As String, toAlbum As String, toGroup As String)
         Dim form As New MultipartForm(TextBox6.Text)
         form.setField("name", "file1") 'имя поля для запроса
         form.sendFile(tFileName)
@@ -382,7 +396,11 @@ Public Class Form1
         End Try
         Dim tmpDescription As String = ConvEscape(TextBoxDescription1.Text) 'Конвертация текста в Escape
 
-        WebBrowser4.Navigate("https://api.vk.com/method/photos.save.xml?server=" & TextBox2.Text & "&group_id=" & TextBoxGroupID1.Text & "&album_id=" & toAlbum & "&photos_list=" & TextBox3.Text & "&caption=" & tmpDescription & "&hash=" & TextBox4.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        If toGroup.Contains("-") = True Then
+            WebBrowser4.Navigate("https://api.vk.com/method/photos.save.xml?server=" & TextBox2.Text & "&group_id=" & toGroup & "&album_id=" & toAlbum & "&photos_list=" & TextBox3.Text & "&caption=" & tmpDescription & "&hash=" & TextBox4.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        Else
+            WebBrowser4.Navigate("https://api.vk.com/method/photos.save.xml?server=" & TextBox2.Text & "&album_id=" & toAlbum & "&photos_list=" & TextBox3.Text & "&caption=" & tmpDescription & "&hash=" & TextBox4.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        End If
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -510,7 +528,7 @@ Public Class Form1
 
     Private Sub VKTimer4_Tick(sender As Object, e As EventArgs) Handles VKTimer4.Tick
         If ListView5.Items.Count > 0 Then
-            PostToAlbum(ListView1.Items.Item(0).Text, ListView5.Items.Item(0).Tag)
+            PostToAlbum(ListView1.Items.Item(0).Text, ListView5.Items.Item(0).SubItems(1).Text, ListView5.Items.Item(0).SubItems(2).Text)
             Try
                 My.Computer.FileSystem.DeleteFile(ListView1.Items.Item(0).Text) 'Удаляем сохраненную в альбом картинку, что бы не повторяться
             Catch ex As Exception
@@ -527,14 +545,18 @@ Public Class Form1
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        WebBrowser1.Navigate("https://api.vk.com/method/photos.getAlbums.xml?owner_id=-" & TextBoxGroupID1.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        If MsgBox("Добавить фотографии из альбомов ползователя?", MsgBoxStyle.YesNo Or MsgBoxStyle.Question) = vbYes Then GetFromAlbums(TextBoxUserID1.Text)
+        If MsgBox("Добавить фотографии из альбомов группы?", MsgBoxStyle.YesNo Or MsgBoxStyle.Question) = vbYes Then GetFromAlbums("-" & TextBoxGroupID1.Text)
+    End Sub
+
+    Private Sub GetFromAlbums(ownerid As String)
         Dim xmlDocPhotoAlbum As New XmlDocument
-        xmlDocPhotoAlbum.Load("https://api.vk.com/method/photos.getAlbums.xml?owner_id=-" & TextBoxGroupID1.Text & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
+        xmlDocPhotoAlbum.Load("https://api.vk.com/method/photos.getAlbums.xml?owner_id=" & ownerid & "&access_token=" & TextBoxToken1.Text & "&v=5.60")
         Dim answersphotoAlbum As XmlNodeList = xmlDocPhotoAlbum.DocumentElement.SelectNodes("/response/items/album")
         For Each element As XmlNode In answersphotoAlbum
             Dim elementID As String = element.SelectSingleNode("id").InnerText
             Dim xmlDocPhoto As New XmlDocument
-            xmlDocPhoto.Load("https://api.vk.com/method/photos.get.xml?owner_id=-" & TextBoxGroupID1.Text & "&album_id=" & elementID & "&rev=0&count=1000&access_token=" & TextBoxToken1.Text & "&v=5.60")
+            xmlDocPhoto.Load("https://api.vk.com/method/photos.get.xml?owner_id=" & ownerid & "&album_id=" & elementID & "&rev=0&count=1000&access_token=" & TextBoxToken1.Text & "&v=5.60")
             Dim answersphoto As XmlNodeList = xmlDocPhoto.DocumentElement.SelectNodes("/response/items/photo")
             For Each element2 As XmlNode In answersphoto
                 ListView1.Items.Add(element2.SelectSingleNode("id").InnerText)
@@ -544,7 +566,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        OpenFileDialog1.InitialDirectory = "c:\"
+        OpenFileDialog1.InitialDirectory = myRegGetValue("defdir", Application.StartupPath)
         OpenFileDialog1.Title = "Открыть XML"
         OpenFileDialog1.Filter = "Файл XML|*.xml"
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
@@ -552,10 +574,11 @@ Public Class Form1
             Dim xmlDoc As New XmlDocument
             xmlDoc.Load(OpenFileDialog1.FileName)
             Dim answers As XmlNodeList = xmlDoc.DocumentElement.SelectNodes("/userlist/items/user")
-            For Each element As XmlNode In answers
+                For Each element As XmlNode In answers
                 ListView3.Items.Add(element.SelectSingleNode("id").InnerText)
                 ListView3.Items.Item(ListView3.Items.Count - 1).SubItems.Add(element.SelectSingleNode("pass").InnerText)
-            Next
+                Next
+            myRegSetValue("defdir", FileIO.FileSystem.GetParentPath(OpenFileDialog1.FileName)) 'сохраняем последнюю использованную директорию
         End If
     End Sub
 
