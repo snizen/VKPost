@@ -527,7 +527,7 @@ Public Class Form1
     End Sub
 
     Private Sub VKTimer4_Tick(sender As Object, e As EventArgs) Handles VKTimer4.Tick
-        If ListView5.Items.Count > 0 Then
+        If ListView1.Items.Count > 0 Then
             PostToAlbum(ListView1.Items.Item(0).Text, ListView5.Items.Item(0).SubItems(1).Text, ListView5.Items.Item(0).SubItems(2).Text)
             Try
                 My.Computer.FileSystem.DeleteFile(ListView1.Items.Item(0).Text) 'Удаляем сохраненную в альбом картинку, что бы не повторяться
@@ -537,6 +537,11 @@ Public Class Form1
             ListView1.Items.Item(0).Remove() 'Удаляем сохраненную в альбом картинку из списка
             Label21.Text = "Осталось сохранить: " & ListView1.Items.Count - 1
         End If
+        VKTimer4.Enabled = False
+    End Sub
+
+    Private Sub WebBrowser4_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser4.DocumentCompleted
+        VKTimer4.Enabled = True
     End Sub
 
     Private Sub VKTimer2_Tick(sender As Object, e As EventArgs) Handles VKTimer2.Tick
@@ -639,4 +644,5 @@ Public Class Form1
         Catch
         End Try
     End Sub
+
 End Class
